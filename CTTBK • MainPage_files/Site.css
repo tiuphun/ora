@@ -213,6 +213,7 @@ h3 { font-size: 16px!important }
 /*--------------------------------------------MainContent*/
 .MainContentTitle
 {
+    font-family: 'Times New Roman', Times, serif;
     padding: 5px; 
     width:100%; 
 }
@@ -221,7 +222,7 @@ h3 { font-size: 16px!important }
 {
     font-weight: bold;
     text-align: center;
-    color: #8c1515;
+    color: red;
     margin-top: 5px !important;
     text-transform: uppercase;
 }
@@ -233,19 +234,30 @@ h3 { font-size: 16px!important }
 
 .Title
 {
-    font-family: 'Segoe UI';
-    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    /* font-family: 'Segoe UI'; */
+    font-size: 14px;
     font-weight: bold;
-    color: #8c1515;
+    color: red;
     vertical-align: middle;
     line-height: 2em;
 }
 
 .normalText
 {
-    font-family: 'Arimo', sans-serif;
+    /* font-family: 'Arimo', sans-serif; */
+    font-family: 'Times New Roman', Times, serif;
     font-size: 16px;
     line-height: 2em;
+}
+
+.before-colon {
+    font-style: italic;
+    
+}
+
+.after-colon {
+    font-weight: bold;
 }
 
 .row hr

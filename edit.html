@@ -16,7 +16,7 @@
     
 <style></style></head>
 <body id="ctl00_ctl00_Body">
-    <form method="post" action="https://ctt-sis.hust.edu.vn/default.aspx" id="aspnetForm" data-toggle="validator" role="form" novalidate="true">
+    <!-- <form method="post" action="https://ctt-sis.hust.edu.vn/default.aspx" id="aspnetForm" data-toggle="validator" role="form" novalidate="true"> -->
 <div class="aspNetHidden">
 <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
 <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
@@ -276,7 +276,7 @@ ASPx.createControl(ASPxClientPanel,'ctl00_ctl00_contentPane_MainPanel_leftMenuPa
                     
 
     <h3>THÔNG TIN CÁ NHÂN
-		<button type="submit">OK</button>
+		<button type="submit" id="okButton">OK</button>
         <button type="button" onclick="window.location.href='CTTBK • MainPage.html'">CANCEL</button>
 	</h3>
 
@@ -352,7 +352,7 @@ ASPx.createControl(ASPxClientCallbackPanel,'ctl00_ctl00_contentPane_MainPanel_Ma
             <input type="text" id="class" name="class" value=""><br>
             <label for="course" style="margin-left: 20px;"><strong>Khóa học : </strong></label>
             <input type="text" id="course" name="course" value=""><br> -->
-            <label for="email" style="margin-left: 20px;"><strong>Email : </strong></label>
+            <label for="email"><strong>Email : </strong></label>
             <input type="text" id="email" name="email" value=""><br> 
         </span>
     </div>
@@ -500,11 +500,28 @@ ASPx.createControl(ASPxClientCallbackPanel,'ctl00_ctl00_contentPane_MainPanel_Ma
     
 
 <script type="text/javascript">
-//<![CDATA[
+    //<![CDATA[
 
-var callBackFrameUrl='/WebResource.axd?d=zNgeSAqK1Gtwh3_l2UBPoaPs5GmS3K_28BXT_HNBFnkFNPnNlCOtgEVyw1zts1gXqRaxDv_11AY0mKn9Gfr8iculLlgI2_ww1LLc3qKszUQ1&t=636862707087933587';
-WebForm_InitCallback();//]]>
+    var callBackFrameUrl='/WebResource.axd?d=zNgeSAqK1Gtwh3_l2UBPoaPs5GmS3K_28BXT_HNBFnkFNPnNlCOtgEVyw1zts1gXqRaxDv_11AY0mKn9Gfr8iculLlgI2_ww1LLc3qKszUQ1&t=636862707087933587';
+    WebForm_InitCallback();//]]>
 </script>
 <input type="hidden" name="DXScript" value="1_9,1_10,1_253,1_21,1_62,1_12,1_13,1_46,1_15,1_22,1_31,1_7,1_181,1_187"><input type="hidden" name="DXCss" value="0_2976,1_66,1_67,0_2981,0_2,1_207,0_2895"></form>
 
 </body></html>
+
+<script>
+    document.getElementById('okButton').addEventListener('click', function(event) {
+    // Prevent the button from submitting a form or refreshing the page
+    event.preventDefault();
+
+    var ids = ['email', 'ethnic', 'yearHighSchool', 'address', 'idCard', 'place', 'fatherName', 'fatherYear', 'fatherJob', 'fatherPhone', 'fatherEmail', 'religion', 'highSchool', 'permanentAddress', 'motherPhone', 'motherName', 'motherYear', 'motherJob', 'motherPhone', 'motherEmail'];
+
+    ids.forEach(function(id) {
+        var value = document.getElementById(id).value;
+        localStorage.setItem(id, value);
+    });
+
+    // Redirect to MainPage.html
+    window.location.href = 'CTTBK • MainPage.html';
+});
+</script>
